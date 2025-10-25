@@ -168,7 +168,10 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
       .arcColor((e: any) => (e as { color: string }).color)
       .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
-      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
+      .arcStroke((e: any) => {
+        const index = (e as { order: number }).order % 3;
+        return [0.32, 0.28, 0.3][index];
+      })
       .arcDashLength(defaultProps.arcLength)
       .arcDashInitialGap((e) => (e as { order: number }).order * 1)
       .arcDashGap(15)
@@ -301,9 +304,20 @@ export function hexToRgb(hex: string) {
 
 export function genRandomNumbers(min: number, max: number, count: number) {
   const arr = [];
-  while (arr.length < count) {
-    const r = Math.floor(Math.random() * (max - min)) + min;
-    if (arr.indexOf(r) === -1) arr.push(r);
+  // Use a deterministic pattern instead of Math.random()
+  const step = Math.max(1, Math.floor((max - min) / count));
+  let current = min;
+  
+  while (arr.length < count && current < max) {
+    if (arr.indexOf(current) === -1) {
+      arr.push(current);
+    }
+    current += step;
+    
+    // If we've reached the end, wrap around with offset
+    if (current >= max && arr.length < count) {
+      current = min + (arr.length % step);
+    }
   }
 
   return arr;
