@@ -4,6 +4,9 @@ import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "motion/react";
 import { Suspense, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import FeaturesSectionDemo1 from "@/components/features-section-demo-1";
+import FeaturesSectionDemo2 from "@/components/features-section-demo-2";
+import FeaturesSectionDemo3 from "@/components/features-section-demo-3";
 
 const World = dynamic(() => import("@/components/ui/globe").then(mod => ({ default: mod.World })), {
   ssr: false,
@@ -196,6 +199,21 @@ export default function Home() {
             </Highlight>
           </motion.h1>
         </HeroHighlight>
+      </section>
+
+      {/* Sección Features 1 - Grid Simple */}
+      <section className="bg-black">
+        <FeaturesSectionDemo1 />
+      </section>
+
+      {/* Sección Features 2 - Con Iconos */}
+      <section className="bg-black">
+        <FeaturesSectionDemo2 />
+      </section>
+
+      {/* Sección Features 3 - Layout Complejo */}
+      <section className="bg-black">
+        <FeaturesSectionDemo3 />
       </section>
     </div>
   );
