@@ -8,6 +8,8 @@ import Image from "next/image";
 import FeaturesSectionDemo1 from "@/components/features-section-demo-1";
 import FeaturesSectionDemo2 from "@/components/features-section-demo-2";
 import FeaturesSectionDemo3 from "@/components/features-section-demo-3";
+import WaitlistSection from "@/components/waitlist-section";
+import Footer from "@/components/footer";
 
 const World = dynamic(() => import("@/components/ui/globe").then(mod => ({ default: mod.World })), {
   ssr: false,
@@ -219,6 +221,12 @@ export default function Home() {
       <section className="bg-black">
         <FeaturesSectionDemo3 />
       </section>
+
+      <section className="bg-black">
+        <WaitlistSection />
+      </section>
+
+      <Footer />
     </div>
   );
 }
