@@ -4,7 +4,16 @@ import { useId } from "react";
 export default function FeaturesSectionDemo() {
   return (
     <div className="py-20 lg:py-40">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <h2 className="text-3xl lg:text-5xl font-bold text-neutral-800 dark:text-white text-center">
+          Explora la ciudad como nunca antes
+        </h2>
+        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-center mt-6 text-lg">
+          Kamino convierte cada rincón en una aventura. Estas son tus
+          herramientas para descubrir el lado auténtico de la ciudad.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-4 max-w-7xl mx-auto mt-12 md:mt-20 px-4 md:px-8">
         {grid.map((feature) => (
           <div
             key={feature.title}
@@ -26,25 +35,25 @@ export default function FeaturesSectionDemo() {
 
 const grid = [
   {
-    title: "HIPAA and SOC2 Compliant",
+    title: "Rutas Inteligentes y Personalizadas",
     description:
-      "Our applications are HIPAA and SOC2 compliant, your data is safe with us, always.",
+      "Dinos tus gustos y tu tiempo disponible. Kamino crea una ruta a pie única para ti, eliminando la fatiga de decidir.",
   },
   {
-    title: "Automated Social Media Posting",
+    title: "Narrador Urbano (IA)",
     description:
-      "Schedule and automate your social media posts across multiple platforms to save time and maintain a consistent online presence.",
+      "Convierte un simple paseo en una historia. Nuestra IA te cuenta anécdotas, datos curiosos y el contexto de cada parada.",
   },
   {
-    title: "Advanced Analytics",
+    title: "Descubrimiento de Joyas Ocultas",
     description:
-      "Gain insights into your social media performance with detailed analytics and reporting tools to measure engagement and ROI.",
+      "Ve más allá de lo turístico. Nuestro motor prioriza cafés, galerías y arte callejero que coinciden con tus gustos.",
   },
   {
-    title: "Content Calendar",
+    title: "Bitácora de Descubrimientos",
     description:
-      "Plan and organize your social media content with an intuitive calendar view, ensuring you never miss a post.",
-  }
+      "Tu diario personal de exploración. Guarda tus rutas completadas, añade fotos y notas para revivir tus aventuras.",
+  },
 ];
 
 export const Grid = ({

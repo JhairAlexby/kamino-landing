@@ -1,43 +1,40 @@
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
   IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
+  IconCurrencyDollar,
+  IconAdjustmentsBolt,
   IconTerminal2,
 } from "@tabler/icons-react";
 
 export default function FeaturesSectionDemo() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Conexión Auténtica",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
+        "No solo visites, conecta. Descubre las historias y personas que le dan vida a la ciudad, más allá de los monumentos.",
+      icon: <IconHeart className="w-8 h-8" />,
     },
     {
-      title: "Ease of use",
+      title: "Impulsa la Economía Local",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
-      icon: <IconEaseInOut />,
+        "Damos visibilidad a pequeños cafés, artistas y tiendas locales, ayudando a distribuir el turismo de forma más justa.",
+      icon: <IconCurrencyDollar className="w-8 h-8" />,
     },
     {
-      title: "Pricing like no other",
+      title: "Contenido Siempre Relevante",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-      icon: <IconCurrencyDollar />,
+        "Nuestra base de datos se actualiza en tiempo real con nuevos lugares, eventos y arte urbano. Siempre hay algo nuevo.",
+      icon: <IconAdjustmentsBolt className="w-8 h-8" />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
-      icon: <IconCloud />,
+      title: "Inteligencia Real",
+      description:
+        "Usamos Machine Learning y Minería de Datos para encontrar patrones y recomendarte lugares que ni tú sabías que te gustarían.",
+      icon: <IconTerminal2 className="w-8 h-8" />,
     },
   ];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
       {features.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
@@ -59,7 +56,7 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
+        "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
         index < 4 && "lg:border-b dark:border-neutral-800"
       )}
