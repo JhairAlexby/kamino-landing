@@ -11,8 +11,9 @@ export default function Footer() {
           © {new Date().getFullYear()} Kamino. Todos los derechos reservados.
         </div>
         <div className="flex gap-6 text-white/70 text-sm order-2 sm:order-3">
-          <a href="#" className="hover:text-white">Privacidad</a>
-          <a href="#" className="hover:text-white">Términos</a>
+          <a href="/privacidad" className="hover:text-white" aria-label="Ver Política de Privacidad">Privacidad</a>
+          <a href="/terminos" className="hover:text-white" aria-label="Ver Términos y Condiciones">Términos y Condiciones</a>
+          <a href="mailto:contacto@kamino.app" className="hover:text-white" aria-label="Contactar a Kamino">Contacto</a>
         </div>
       </div>
     </footer>

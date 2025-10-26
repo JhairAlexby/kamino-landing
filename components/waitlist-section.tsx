@@ -38,7 +38,7 @@ export default function WaitlistSection() {
   };
 
   return (
-    <div className="w-full bg-black py-16 px-4">
+    <div className="w-full bg-black min-h-[40vh] flex items-start justify-center px-4 pt-8 pb-16">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white">Regístrate a la lista de espera</h2>
         <p className="mt-3 text-white/80">Sé el primero en explorar Kamino cuando lancemos.</p>
