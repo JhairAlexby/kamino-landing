@@ -90,12 +90,13 @@ export const SkeletonOne = () => {
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
       <div className="w-full p-5 mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
-        <div className="relative flex flex-1 w-full h-full flex-col space-y-2">
+        <div className="relative flex flex-1 w-full h-full flex-col space-y-2 min-h-[280px] sm:min-h-[320px] md:min-h-[420px]">
           <Image
-            src="/images/map.jpg"
+            src="/images/turista.jpg"
             alt="Mapa de ruta inteligente Kamino"
             fill
             className="object-cover object-left-top rounded-sm"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 800px"
           />
         </div>
       </div>

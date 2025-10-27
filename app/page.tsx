@@ -10,6 +10,8 @@ import FeaturesSectionDemo2 from "@/components/features-section-demo-2";
 import FeaturesSectionDemo3 from "@/components/features-section-demo-3";
 import WaitlistSection from "@/components/waitlist-section";
 import Footer from "@/components/footer";
+import { AnimatedTooltipPreview } from "@/components/animated-tooltip-preview";
+
 
 const World = dynamic(() => import("@/components/ui/globe").then(mod => ({ default: mod.World })), {
   ssr: false,
@@ -210,6 +212,8 @@ export default function Home() {
         </HeroHighlight>
       </section>
 
+      
+
       <section className="bg-black">
         <FeaturesSectionDemo1 />
       </section>
@@ -220,6 +224,10 @@ export default function Home() {
 
       <section className="bg-black">
         <FeaturesSectionDemo3 />
+      </section>
+
+      <section className="bg-black py-8">
+        <AnimatedTooltipPreview />
       </section>
 
       <section className="bg-black">
